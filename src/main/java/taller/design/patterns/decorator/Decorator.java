@@ -11,6 +11,9 @@ public class Decorator {
 
         LOGGER.info("Start Demo...");
 
+        AccountService myServicio = new SavingAccount();
+        AccountService accountService = new InsurranceDecorator(myServicio);
 
+        accountService.openAccount(new Account(123, "Erick"));
     }
 }
